@@ -526,6 +526,23 @@ section {
   margin-top: 1.15rem;
 }
 
+.fa-fulltime-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.35rem;
+}
+
+@media (min-width: 900px) {
+  .fa-fulltime-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.fa-fulltime-grid .embed-panel {
+  margin-top: 0;
+}
+
 .embed-panel {
   margin-top: 1.35rem;
   background: var(--surface);
@@ -576,7 +593,7 @@ section {
   overflow-x: auto;
 }
 
-.fa-league-host #lrep201329935 {
+.fa-league-host [id^="lrep"] {
   max-width: 100%;
 }
 
