@@ -351,6 +351,49 @@ section {
   margin-bottom: 0.25rem;
 }
 
+.sponsors-section .sponsors-pay-link {
+  margin-top: 0.75rem;
+}
+
+/* Sponsor / donate payment links (sponsor.html) */
+.sponsor-pay-intro {
+  max-width: 52ch;
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.sponsor-pay-note {
+  margin: 0 0 1.75rem;
+  padding: 1rem 1.15rem;
+  max-width: 52ch;
+  background: var(--surface-card);
+  border-left: 4px solid var(--claret);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.sponsor-pay-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+  max-width: 32rem;
+}
+
+.sponsor-pay-grid .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.sponsor-pay-foot {
+  margin-top: 2rem;
+  max-width: 52ch;
+}
+
 .sponsors-grid {
   list-style: none;
   margin: 1.5rem 0 0;
@@ -532,15 +575,40 @@ section {
   margin-top: 1.35rem;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 640px) {
   .fa-fulltime-grid {
     grid-template-columns: 1fr 1fr;
-    align-items: start;
+    align-items: stretch;
+  }
+
+  .fa-fulltime-grid .fa-embed--league {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .fa-fulltime-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .fa-fulltime-grid .fa-embed--league {
+    grid-column: auto;
   }
 }
 
 .fa-fulltime-grid .embed-panel {
   margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.fa-fulltime-grid .embed-panel .embed-frame-wrap.fa-league-host {
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .embed-panel {
@@ -912,4 +980,204 @@ section {
 .footer-social svg {
   width: 22px;
   height: 22px;
+}
+
+/* Club history page */
+.history-lead {
+  margin: 0 0 1.5rem;
+  max-width: 52ch;
+}
+
+.history-toc {
+  margin: 0;
+  padding: 1rem 1.15rem;
+  background: var(--surface-shop);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--claret);
+}
+
+.history-toc-title {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.history-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.history-toc a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.history-toc a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.history-content {
+  max-width: 56rem;
+}
+
+.history-section {
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding-bottom: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.history-section--alt {
+  background: var(--surface-shop);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.history-section--honours {
+  padding-bottom: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+.history-subheading {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.15;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--claret);
+}
+
+.history-intro {
+  margin-bottom: 1.25rem;
+}
+
+.history-timeline {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.history-timeline-item {
+  padding: 1rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.history-timeline-item p {
+  margin: 0.35rem 0 0;
+  font-size: 1.03rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.history-timeline-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--claret-deep);
+}
+
+.history-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+  -webkit-overflow-scrolling: touch;
+}
+
+.history-table-wrap:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.history-table {
+  width: 100%;
+  min-width: 18rem;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.65rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.history-table thead th {
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.history-table tbody th[scope="row"] {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  background: var(--surface-card);
+}
+
+.history-table tbody tr:nth-child(even) td,
+.history-table tbody tr:nth-child(even) th[scope="row"] {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.history-table tbody tr:last-child th,
+.history-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.history-table--compact {
+  max-width: 22rem;
+}
+
+.era-heading {
+  margin: 2rem 0 0.65rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--claret-deep);
+}
+
+.history-section--honours .era-heading:first-of-type {
+  margin-top: 0.35rem;
+}
+
+.history-footnote {
+  margin-top: 2rem;
+}
+
+@media (max-width: 639px) {
+  .history-table th,
+  .history-table td {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.92rem;
+  }
 }

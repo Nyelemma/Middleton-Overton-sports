@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Middleton &amp; Overton Sports FC — Morecambe. Mid Lancashire Football League, Middleton Park LA3 3LG. League table, fixtures, sponsors, photos, contact. About the club since 2004."
+      content="Middleton &amp; Overton Sports FC — Morecambe. Mid Lancashire Football League, Middleton Park LA3 3LG. League table, fixtures, results, sponsors, photos, contact. About the club since 2004."
     />
     <title>Middleton &amp; Overton Sports FC | Morecambe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,8 +31,9 @@
         </a>
         <nav class="nav-main" aria-label="Primary">
           <a href="about.html">About</a>
+          <a href="history.html">History</a>
           <a href="#sponsors">Sponsors</a>
-          <a href="#league">League &amp; fixtures</a>
+          <a href="#league">League, fixtures &amp; results</a>
           <a href="#instagram">Photos</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -84,8 +85,9 @@
           Middleton Park, Middleton Rd, Middleton, Morecambe <span class="postcode">LA3 3LG</span>
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#league">View league &amp; fixtures</a>
+          <a class="btn btn-primary" href="#league">View league, fixtures &amp; results</a>
           <a class="btn btn-outline" href="about.html">About the club</a>
+          <a class="btn btn-outline" href="history.html">Club history</a>
           <a class="btn btn-outline" href="#contact">Get in touch</a>
         </div>
       </div>
@@ -96,6 +98,10 @@
         <h2 class="section-title" id="sponsors-title">Our sponsors</h2>
         <p class="section-lead">
           We are grateful to our sponsors for backing the club. Visit their websites below.
+        </p>
+        <p class="section-lead sponsors-pay-link">
+          To sponsor the club or donate online, visit our
+          <a href="sponsor.html">sponsor page</a>.
         </p>
         <ul class="sponsors-grid">
           <li>
@@ -195,13 +201,13 @@
 
     <section id="league" aria-labelledby="league-title">
       <div class="wrap">
-        <h2 class="section-title" id="league-title">League table &amp; fixtures</h2>
+        <h2 class="section-title" id="league-title">League table, fixtures &amp; results</h2>
         <p class="section-lead">
-          Live standings and fixtures from The FA Full-Time widgets below. You can also open the
-          division on The FA’s site if anything fails to load.
+          Live standings, upcoming fixtures, and recent results from The FA Full-Time widgets below.
+          You can also open the division on The FA’s site if anything fails to load.
         </p>
         <div class="fa-fulltime-grid">
-          <div class="embed-panel">
+          <div class="embed-panel fa-embed--league">
             <header>
               <h2>The FA Full-Time — division table</h2>
               <a
@@ -235,7 +241,7 @@
           </div>
           <div class="embed-panel">
             <header>
-              <h2>The FA Full-Time — fixtures &amp; results</h2>
+              <h2>The FA Full-Time — fixtures</h2>
               <a
                 class="link-external"
                 href="https://fulltime.thefa.com/index.html?divisionseason=886514120"
@@ -245,7 +251,7 @@
               >
             </header>
             <div class="embed-frame-wrap fa-league-host">
-              <div id="lrep920015206" style="width: 350px">
+              <div id="lrep654873503" style="width: 350px">
                 Data loading....
                 <a
                   href="https://fulltime.thefa.com/index.html?divisionseason=886514120"
@@ -260,9 +266,78 @@
                 >
               </div>
               <script type="text/javascript">
-                var lrcode = "920015206";
+                var lrcode = "654873503";
               </script>
               <script type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script>
+            </div>
+          </div>
+          <div class="embed-panel">
+            <header>
+              <h2>The FA Full-Time — results</h2>
+              <a
+                class="link-external"
+                href="https://fulltime.thefa.com/index.html?divisionseason=886514120"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open on Full-Time ↗</a
+              >
+            </header>
+            <div class="embed-frame-wrap fa-league-host">
+              <div id="lrep765363042" style="width: 350px">
+                Data loading....
+                <a
+                  href="https://fulltime.thefa.com/index.html?divisionseason=886514120"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >click here for First</a
+                ><br /><br /><a
+                  href="https://www.thefa.com/FULL-TIME"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >FULL-TIME Home</a
+                >
+              </div>
+              <script type="text/javascript">
+                var lrcode = "765363042";
+              </script>
+              <script type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script>
+              <script type="text/javascript">
+                (function () {
+                  var hostId = "lrep765363042";
+                  var maxResults = 10;
+                  function trimToLastResults() {
+                    var root = document.getElementById(hostId);
+                    if (!root) return;
+                    var table = root.querySelector("table");
+                    if (!table) return;
+                    var trs = Array.prototype.slice.call(table.querySelectorAll("tr"));
+                    var blocks = [];
+                    var i;
+                    for (i = 0; i < trs.length - 1; i++) {
+                      if (trs[i].querySelector('td[colspan="7"]')) {
+                        blocks.push([trs[i], trs[i + 1]]);
+                        i++;
+                      }
+                    }
+                    if (blocks.length <= maxResults) return;
+                    var drop = blocks.length - maxResults;
+                    for (i = 0; i < drop; i++) {
+                      blocks[i][0].remove();
+                      blocks[i][1].remove();
+                    }
+                  }
+                  var host = document.getElementById(hostId);
+                  if (!host) return;
+                  if (window.MutationObserver) {
+                    new MutationObserver(trimToLastResults).observe(host, {
+                      childList: true,
+                      subtree: true,
+                    });
+                  }
+                  trimToLastResults();
+                  window.addEventListener("load", trimToLastResults);
+                })();
+              </script>
             </div>
           </div>
         </div>
@@ -429,7 +504,8 @@
         </p>
         <p>
           &copy; <span id="year"></span> Middleton &amp; Overton Sports FC.
-          <a href="about.html">About</a> · League data:
+          <a href="about.html">About</a> · <a href="history.html">History</a> ·
+          <a href="sponsor.html">Sponsor us</a> · League data:
           <a
             href="https://fulltime.thefa.com/index.html?divisionseason=886514120"
             target="_blank"
