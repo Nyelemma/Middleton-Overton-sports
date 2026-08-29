@@ -109,6 +109,11 @@ a:hover {
 }
 
 /* Crest — explicit dimensions override global img { height: auto } */
+.brand picture {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
 .brand-badge {
   width: 50px;
   height: 50px;
@@ -1180,4 +1185,157 @@ section {
     padding: 0.55rem 0.65rem;
     font-size: 0.92rem;
   }
+}
+
+/* Skip link — visible on keyboard focus only */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 200;
+  padding: 0.55rem 0.9rem;
+  background: var(--claret);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  color: var(--white);
+  outline: 2px solid var(--blue-bright);
+  outline-offset: 2px;
+}
+
+.hero-tagline {
+  display: block;
+  margin: 0.45rem 0 0;
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: var(--blue-muted);
+  text-transform: uppercase;
+}
+
+.club-intro {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.club-intro .about-body {
+  margin-bottom: 0;
+}
+
+.league-copy {
+  margin: 0 0 0.85rem;
+}
+
+.league-copy + .league-copy {
+  margin-top: 0;
+}
+
+.league-links {
+  margin: 0 0 0.25rem;
+}
+
+.embed-panel header h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.faq-section {
+  background: var(--surface-shop);
+  border-top: 1px solid var(--border);
+}
+
+.faq-list {
+  list-style: none;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 48rem;
+}
+
+.faq-list details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 0.85rem 1.15rem;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.faq-list summary:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.faq-list details p {
+  margin: 0.75rem 0 0.15rem;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.page-breadcrumb {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.page-breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+}
+
+.page-breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.5rem;
+  color: var(--border-strong);
+}
+
+.sponsor-cta-wrap {
+  margin: 1.5rem 0 0;
+}
+
+.sponsor-cta-wrap .btn {
+  text-decoration: none;
+}
+
+.sponsor-value {
+  max-width: 52ch;
+  margin: 0 0 1.15rem;
+}
+
+.contact-related {
+  margin-top: 1.15rem;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
